@@ -1,0 +1,46 @@
+# Project: Compañia_telefonica
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Funcion1.o Compania_telefonicav7.o Funcion2.o Funcion3.o Funcion4.o Funcion5.o Funcion6.o
+LINKOBJ  = Funcion1.o Compania_telefonicav7.o Funcion2.o Funcion3.o Funcion4.o Funcion5.o Funcion6.o
+LIBS     = -L"D:/Dev-Cpp/MinGW64/lib" -L"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"D:/Dev-Cpp/MinGW64/include" -I"D:/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"D:/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Compania_telefonica.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Funcion1.o: Funcion1.c
+	$(CC) -c Funcion1.c -o Funcion1.o $(CFLAGS)
+
+Compania_telefonicav7.o: Compania_telefonicav7.c
+	$(CC) -c Compania_telefonicav7.c -o Compania_telefonicav7.o $(CFLAGS)
+
+Funcion2.o: Funcion2.c
+	$(CC) -c Funcion2.c -o Funcion2.o $(CFLAGS)
+
+Funcion3.o: Funcion3.c
+	$(CC) -c Funcion3.c -o Funcion3.o $(CFLAGS)
+
+Funcion4.o: Funcion4.c
+	$(CC) -c Funcion4.c -o Funcion4.o $(CFLAGS)
+
+Funcion5.o: Funcion5.c
+	$(CC) -c Funcion5.c -o Funcion5.o $(CFLAGS)
+
+Funcion6.o: Funcion6.c
+	$(CC) -c Funcion6.c -o Funcion6.o $(CFLAGS)
